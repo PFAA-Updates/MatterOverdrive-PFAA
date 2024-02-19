@@ -1,30 +1,23 @@
-# Matter Overdrive
-![alt tag](https://raw.githubusercontent.com/simeonradivoev/MatterOverdrive/master/MatterOverdriveLogo.png)
+![](BannerBlinks.gif)
 
-<h2 align="center">
-<a href='https://mo.simeonradivoev.com/'>Website</a> |
-<a href='https://mo.simeonradivoev.com/category/gettingstarted/'>Getting Started</a> |
-<a href='https://mo.simeonradivoev.com/category/faq/'>FAQ</a> |
-<a href='https://mo.simeonradivoev.com/download_category/downloads/'>Downloads</a> |
-<a href='https://mo.simeonradivoev.com/builds/'>Dev Builds</a>
-</h2>
+![Discord](https://img.shields.io/discord/703124643149643818?logo=discord&link=https%3A%2F%2Fdiscord.gg%2FhQyAEZV) ![CurseForge Downloads](https://img.shields.io/curseforge/dt/557428?logo=curseforge&link=https%3A%2F%2Fwww.curseforge.com%2Fminecraft%2Fmc-mods%2Fmatter-overdrive-community-edition) ![Modrinth Downloads](https://img.shields.io/modrinth/dt/xNn9ASDj?logo=modrinth&link=https%3A%2F%2Fmodrinth.com%2Fmod%2Fmoce)
 
 ## Table of Contents
 * [About](#about)
 * [Features](#features)
-* [Contacts](#contacts)
+* [Mod-Links](#mod-links)
 * [Isues](#issues)
 * [Building](#building)
 * [IMC](#imc)
-* [Donations](#donations)
 
 ## About
 Matter Overdrive is a Minecraft mod inspired by the popular Sci-fi TV series Star Trek. It dwells in the concept of replicating and transforming one type matter into another.
 Although it may seem overpowered, Matter Overdrive takes a more realistic approach and requires the player to build a complex system before even the simplest replication can be achieved.
 
-## Contacts
-* [Simeon Radivoev](simeonradivoev@gmail.com)
-* IRC: **#matteroverdrive** at **irc.esper.net**
+## Mod-Links
+* [Modrinth](https://modrinth.com/mod/moce)
+* [Curseforge](https://www.curseforge.com/minecraft/mc-mods/matter-overdrive-community-edition)
+* [Discord](https://discord.gg/hQyAEZV)
 
 ## Features
 * [Matter Scanner](https://mo.simeonradivoev.com/items/matter_scanner/), for scanning matter patterns for replication.
@@ -41,13 +34,12 @@ Although it may seem overpowered, Matter Overdrive takes a more realistic approa
 ![Matter Overdrive Blocks and Items](https://mo.simeonradivoev.com/wp-content/uploads/2015/05/main_screenshot.png)
 
 ## Issues
-If you have any crashes, problems or suggestions just open a [new Issue](https://github.com/simeonradivoev/MatterOverdrive/issues/new).
-If your crash or problem was fixed, but is not yet released as a public download you can always download the latest [Dev Build](https://mo.simeonradivoev.com/builds/).
+https://github.com/Matter-Overdrive-Community-Edition/MatterOverdrive-Community-Edition-1.7.10/issues
 
 ## Building
 1. Clone this repository via 
-  - SSH `git clone git@github.com:simeonradivoev/MatterOverdrive.git` or 
-  - HTTPS `git clone https://github.com/simeonradivoev/MatterOverdrive.git`
+  - SSH `git clone git@github.com:Matter-Overdrive-Community-Edition/MatterOverdrive-Community-Edition-1.7.10.git` or 
+  - HTTPS `git clone https://github.com/Matter-Overdrive-Community-Edition/MatterOverdrive-Community-Edition-1.7.10.git`
 2. Setup workspace 
   - Decompiled source `gradlew setupDecompWorkspace`
   - Obfuscated source `gradlew setupDevWorkspace`
@@ -59,8 +51,3 @@ If your crash or problem was fixed, but is not yet released as a public download
   
 ## IMC
 See the example on [IMC](https://github.com/simeonradivoev/MatterOverdrive/blob/master/src/main/java/matteroverdrive/api/IMC.java) or you can see the [IMC handler](https://github.com/simeonradivoev/MatterOverdrive/blob/master/src/main/java/matteroverdrive/imc/MOIMCHandler.java).
-
-## Donations
-Donations go a long way to helping me continue working on Matter Overdrive, making exiting new features.
-
-[![Donate](https://mo.simeonradivoev.com/wp-content/uploads/2015/06/paypal1.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=KGKJSVXZQXWXS)
