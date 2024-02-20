@@ -19,6 +19,7 @@
 package matteroverdrive.commands;
 
 import matteroverdrive.MatterOverdrive;
+import matteroverdrive.util.MOLog;
 import matteroverdrive.world.MOImageGen;
 import net.minecraft.block.Block;
 import net.minecraft.command.CommandBase;
@@ -101,7 +102,7 @@ public class SaveWorldToImage extends CommandBase
                                             colorMap.put(blockName,color & 0xffffff);
                                         }
                                     }
-                                    MatterOverdrive.log.info("ImageX: %s, ImageY: %s", imageX, imageY);
+                                    MOLog.info("ImageX: %s, ImageY: %s", imageX, imageY);
                                     image.setRGB(imageX, imageY, color);
                                 }
                             }
@@ -137,7 +138,7 @@ public class SaveWorldToImage extends CommandBase
                         }
                     }catch (Exception e)
                     {
-                        MatterOverdrive.log.error("",e);
+                        MOLog.error("",e);
                         throw new CommandException(e.getMessage());
                     }
                 }

@@ -31,6 +31,7 @@ import matteroverdrive.network.packet.client.starmap.PacketUpdateGalaxy;
 import matteroverdrive.network.packet.client.starmap.PacketUpdatePlanet;
 import matteroverdrive.starmap.data.*;
 import matteroverdrive.util.IConfigSubscriber;
+import matteroverdrive.util.MOLog;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
@@ -87,7 +88,7 @@ public class GalaxyServer extends GalaxyCommon implements IConfigSubscriber
             return true;
         } catch (IOException e)
         {
-			MatterOverdrive.log.error("Galaxy could not be saved", e);
+			MOLog.error("Galaxy could not be saved", e);
             return false;
         }
     }
@@ -105,19 +106,19 @@ public class GalaxyServer extends GalaxyCommon implements IConfigSubscriber
                 theGalaxy.readFromNBT(tagCompound, galaxyGenerator);
                 if (theGalaxy.getVersion() < GALAXY_VERSION)
                 {
-					MatterOverdrive.log.info("Galaxy Version is too old. Galaxy Needs regeneration");
+					MOLog.info("Galaxy Version is too old. Galaxy Needs regeneration");
                     galaxyGenerator.regenerateQuadrants(theGalaxy);
                 }
                 setTheGalaxy(theGalaxy);
                 return true;
             } catch (IOException e)
             {
-				MatterOverdrive.log.error("Could not load galaxy from file", e);
+				MOLog.error("Could not load galaxy from file", e);
                 return false;
             }
         }else
         {
-			MatterOverdrive.log.info("Galaxy File could not be found at: '%s'", file);
+			MOLog.info("Galaxy File could not be found at: '%s'", file);
         }
         return false;
     }
@@ -198,7 +199,7 @@ public class GalaxyServer extends GalaxyCommon implements IConfigSubscriber
                 return true;
             }else
             {
-				MatterOverdrive.log.warn("%s could not claim planet.", player.getDisplayName());
+				MOLog.warn("%s could not claim planet.", player.getDisplayName());
             }
         }
         return false;
@@ -248,7 +249,7 @@ public class GalaxyServer extends GalaxyCommon implements IConfigSubscriber
                 }
             }else
             {
-				MatterOverdrive.log.warn("Galaxy is missing.");
+				MOLog.warn("Galaxy is missing.");
             }
         }
     }
@@ -263,10 +264,10 @@ public class GalaxyServer extends GalaxyCommon implements IConfigSubscriber
             long start = System.nanoTime();
             if (!loadGalaxy(galaxyFile,load.world)) {
                 createGalaxy(galaxyFile, load.world);
-				MatterOverdrive.log.info("Galaxy Generated and saved to '%1$s'. Took %2$s milliseconds", galaxyFile.getPath(), ((System.nanoTime() - start) / 1000000));
+				MOLog.info("Galaxy Generated and saved to '%1$s'. Took %2$s milliseconds", galaxyFile.getPath(), ((System.nanoTime() - start) / 1000000));
             }else
             {
-				MatterOverdrive.log.info("Galaxy Loaded from '%1$s'. Took %2$s milliseconds", galaxyFile.getPath(), ((System.nanoTime() - start) / 1000000));
+				MOLog.info("Galaxy Loaded from '%1$s'. Took %2$s milliseconds", galaxyFile.getPath(), ((System.nanoTime() - start) / 1000000));
             }
         }
     }
@@ -285,7 +286,7 @@ public class GalaxyServer extends GalaxyCommon implements IConfigSubscriber
                 File galaxyFile = getGalaxyFile(save.world);
                 if (saveGalaxy(galaxyFile)) {
                     theGalaxy.onSave(galaxyFile,save.world);
-					MatterOverdrive.log.info("Galaxy saved to '%s'. Took %s milliseconds", galaxyFile.getPath(), ((System.nanoTime() - start) / 1000000));
+					MOLog.info("Galaxy saved to '%s'. Took %s milliseconds", galaxyFile.getPath(), ((System.nanoTime() - start) / 1000000));
                 }
             }
         }

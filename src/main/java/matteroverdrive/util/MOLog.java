@@ -22,6 +22,8 @@ import matteroverdrive.Reference;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.Logger;
 
+import cpw.mods.fml.relauncher.FMLRelaunchLog;
+
 /**
  * Created by Simeon on 8/11/2015.
  */
@@ -31,12 +33,12 @@ public class MOLog
 
     public static void log(Level level, String format, Object... data)
     {
-        coreLog.log(Reference.MOD_NAME, level, format, data);
+        FMLRelaunchLog.log(Reference.MOD_NAME, level, format, data);
     }
 
     public static void log(Level level, Throwable ex, String format, Object... data)
     {
-        coreLog.log(Reference.MOD_NAME, level, ex, format, data);
+        FMLRelaunchLog.log(Reference.MOD_NAME, level, ex, format, data);
     }
 
     public static void bigWarning(String format, Object... data)

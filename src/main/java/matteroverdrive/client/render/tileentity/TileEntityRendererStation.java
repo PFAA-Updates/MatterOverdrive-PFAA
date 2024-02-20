@@ -75,7 +75,7 @@ public abstract class TileEntityRendererStation<T extends MOTileEntityMachine> e
         }else
         {
             validShader = false;
-            MatterOverdrive.log.warn("Your machine does not support OpenGL 2.0. The holographic shader will be disabled.");
+            MOLog.warn("Your machine does not support OpenGL 2.0. The holographic shader will be disabled.");
         }
     }
 
