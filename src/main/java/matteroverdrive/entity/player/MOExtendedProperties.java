@@ -27,7 +27,6 @@ import matteroverdrive.api.quest.IQuestReward;
 import matteroverdrive.api.quest.QuestStack;
 import matteroverdrive.data.quest.PlayerQuestData;
 import matteroverdrive.gui.GuiDataPad;
-import matteroverdrive.handler.GoogleAnalyticsCommon;
 import matteroverdrive.init.MatterOverdriveItems;
 import matteroverdrive.network.packet.client.quest.PacketSyncQuests;
 import matteroverdrive.network.packet.client.quest.PacketUpdateQuest;
@@ -121,7 +120,6 @@ public class MOExtendedProperties implements IExtendedEntityProperties
             } else
             {
                 QuestStack addedQuest = questData.addQuest(questStack);
-                MatterOverdrive.proxy.getGoogleAnalytics().sendEventHit(GoogleAnalyticsCommon.EVENT_CATEGORY_QUESTS,GoogleAnalyticsCommon.EVENT_ACTION_QUEST_ACCEPT,addedQuest.getTitle(),player);
                 ClientProxy.questHud.addStartedQuest(addedQuest);
             }
         }
@@ -156,7 +154,6 @@ public class MOExtendedProperties implements IExtendedEntityProperties
 
             if (!MinecraftForge.EVENT_BUS.post(event))
             {
-                MatterOverdrive.proxy.getGoogleAnalytics().sendEventHit(GoogleAnalyticsCommon.EVENT_CATEGORY_QUESTS,GoogleAnalyticsCommon.EVENT_ACTION_QUEST_COMPLETE,event.questStack.getTitle(),player);
                 questData.addQuestToCompleted(questStack);
                 getPlayer().addExperience(event.xp);
                 InventoryPlayer inventoryPlayer = getPlayer().inventory;
@@ -188,7 +185,6 @@ public class MOExtendedProperties implements IExtendedEntityProperties
         }
         else
         {
-            MatterOverdrive.proxy.getGoogleAnalytics().sendEventHit(GoogleAnalyticsCommon.EVENT_CATEGORY_QUESTS,GoogleAnalyticsCommon.EVENT_ACTION_QUEST_ABANDON,questStack.getTitle(),player);
             if (Minecraft.getMinecraft().currentScreen instanceof GuiDataPad)
             {
                 ((GuiDataPad) Minecraft.getMinecraft().currentScreen).refreshQuests(this);

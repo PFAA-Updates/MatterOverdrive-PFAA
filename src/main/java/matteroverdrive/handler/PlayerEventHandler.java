@@ -170,7 +170,6 @@ public class PlayerEventHandler
         {
             if (!((EntityPlayer) deathEvent.entityLiving).worldObj.isRemote)
             {
-                MatterOverdrive.proxy.getGoogleAnalytics().sendEventHit(GoogleAnalyticsCommon.EVENT_CATEGORY_ENTITIES, GoogleAnalyticsCommon.EVENT_ACTION_PLAYER_DEATH, deathEvent.source.getDamageType(), ((EntityPlayer) deathEvent.entityLiving).ticksExisted / 20, (EntityPlayer) deathEvent.entityLiving);
                 AndroidPlayer androidPlayer = AndroidPlayer.get((EntityPlayer) deathEvent.entityLiving);
                 if (androidPlayer != null && androidPlayer.isAndroid())
                 {
@@ -198,13 +197,6 @@ public class PlayerEventHandler
     {
         if (event.player != null)
         {
-            if (event.player.worldObj.isRemote)
-            {
-                if (event.crafting != null && event.crafting.getItem() instanceof MOBaseItem)
-                {
-                    MatterOverdrive.proxy.getGoogleAnalytics().sendEventHit(GoogleAnalyticsCommon.EVENT_CATEGORY_ITEMS, GoogleAnalyticsCommon.EVENT_ACTION_CRAFT_ITEMS, event.crafting.getUnlocalizedName(), event.crafting.stackSize, event.player);
-                }
-            }else
             {
                 MOExtendedProperties extendedProperties = MOExtendedProperties.get(event.player);
                 if (extendedProperties != null)
@@ -250,10 +242,6 @@ public class PlayerEventHandler
     @SubscribeEvent
     public void onBioticStatUse(MOEventBionicStat event)
     {
-        if (event.entityPlayer.worldObj.isRemote)
-        {
-            MatterOverdrive.proxy.getGoogleAnalytics().sendEventHit(GoogleAnalyticsCommon.EVENT_CATEGORY_BIOTIC_STATS, GoogleAnalyticsCommon.EVENT_ACTION_BIOTIC_STAT_USE, event.stat.getUnlocalizedName(), event.android.getPlayer());
-        }
     }
 
     @SubscribeEvent

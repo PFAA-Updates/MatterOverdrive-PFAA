@@ -184,13 +184,12 @@ public class MatterOverdrive
 		event.registerServerCommand(new QuestCommands());
 		event.registerServerCommand(new SaveWorldToImage());
 		event.registerServerCommand(new WorldGenCommands());
-        proxy.getGoogleAnalytics().load();
 	}
 
     @EventHandler
     public void serverStopping(FMLServerStoppingEvent event)
     {
-        proxy.getGoogleAnalytics().unload();
+
     }
 
     @EventHandler
@@ -224,7 +223,7 @@ public class MatterOverdrive
         double version = Double.parseDouble(versionString.substring(0, pos));
         if (version < 1.8)
         {
-			MatterOverdrive.log.warn("Matter Overdrive only supports Java 8 and above. Please update your Java version. You are currently using: " + version);
+			MOLog.warn("Matter Overdrive only supports Java 8 and above. Please update your Java version. You are currently using: " + version);
         }
 	}
 }
