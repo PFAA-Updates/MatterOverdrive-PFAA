@@ -24,7 +24,7 @@ import matteroverdrive.client.data.Color;
 public class Reference
 {
 	public static final String MOD_ID = "mo";
-	public static final String MOD_NAME = "Matter Overdrive";
+	public static final String MOD_NAME = "MatterOverdrive: Community Edition";
 	public static final String VERSION = "0.4.2";
 	public static final String VERSION_DATE = "20.09.2016";
 	public static final String GUI_FACTORY_CLASS = "matteroverdrive.gui.GuiConfigFactory";
