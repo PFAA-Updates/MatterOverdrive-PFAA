@@ -33,7 +33,7 @@ import java.util.Random;
  */
 public class MOWorldGenCargoShip extends MOWorldGenBuilding
 {
-    private static final int MIN_DISTANCE_APART = 4096;
+    private static final int MIN_DISTANCE_APART = 3072;
 
     public MOWorldGenCargoShip(String name)
     {
