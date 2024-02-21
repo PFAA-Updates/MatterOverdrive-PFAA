@@ -31,6 +31,7 @@ import net.minecraftforge.oredict.OreDictionary;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Created by Simeon on 8/11/2015.
@@ -110,7 +111,10 @@ public class MatterRegistryCommands extends CommandBase
                     MatterOverdrive.matterRegistry.addToBlacklist(key);
                     String[] oldBlacklist = MatterOverdrive.configHandler.getStringList(ConfigurationHandler.CATEGORY_MATTER, ConfigurationHandler.KEY_MBLACKLIST);
                     String[] newBlacklist = new String[oldBlacklist != null ? oldBlacklist.length + 1 : 1];
-                    newBlacklist[oldBlacklist.length] = key;
+                    if (newBlacklist.length != 1 & oldBlacklist != null) {
+                        System.arraycopy(oldBlacklist, 0, newBlacklist, 0, oldBlacklist.length);
+                    }
+                    newBlacklist[Objects.requireNonNull(oldBlacklist).length] = key;
                     MatterOverdrive.configHandler.config.get(ConfigurationHandler.CATEGORY_MATTER, ConfigurationHandler.KEY_MBLACKLIST, new String[]{}, "").set(newBlacklist);
                     MatterOverdrive.configHandler.save();
                     commandSender.addChatMessage(new ChatComponentText(EnumChatFormatting.GOLD + "[" + key + "]" + EnumChatFormatting.RESET + " Added $s to matter blacklist and config.\nYou must recalculate the registry for changes to take effect.\nUse /matter_registry recalculate."));
