@@ -75,16 +75,16 @@ import java.util.*;
 public class TileEntityGravitationalAnomaly extends MOTileEntity implements IScannable, IMOTickable,IGravitationalAnomaly
 {
     public static boolean FALLING_BLOCKS = true;
-    public static boolean BLOCK_ENTETIES = true;
+    public static boolean BLOCK_ENTITIES = true;
     public static boolean VANILLA_FLUIDS = true;
     public static boolean FORGE_FLUIDS = true;
     public static boolean BLOCK_DESTRUCTION = true;
     public static boolean GRAVITATION = true;
     public static final float MAX_VOLUME = 0.5f;
-    public static final int BLOCK_DESTORY_DELAY = 6;
+    public static final int BLOCK_DESTROY_DELAY = 6;
     public static final int MAX_BLOCKS_PER_HARVEST = 6;
     public static final int MAX_LIQUIDS_PER_HARVEST = 32;
-    public static final double STREHGTH_MULTIPLYER = 0.00001;
+    public static final double STRENGTH_MULTIPLIER = 0.00001;
     public static final double G = 6.67384;
     public static final double G2 = G * 2;
     public static final double C = 2.99792458;
@@ -92,7 +92,7 @@ public class TileEntityGravitationalAnomaly extends MOTileEntity implements ISca
 
     @SideOnly(Side.CLIENT)
     private GravitationalAnomalySound sound;
-    private TimeTracker blockDestoryTimer;
+    private TimeTracker blockDestroyTimer;
     private long mass;
     PriorityQueue<PositionWrapper> blocks;
     List<AnomalySuppressor> supressors;
@@ -106,7 +106,7 @@ public class TileEntityGravitationalAnomaly extends MOTileEntity implements ISca
     //region Constructors
     public TileEntityGravitationalAnomaly()
     {
-        blockDestoryTimer = new TimeTracker();
+        blockDestroyTimer = new TimeTracker();
         this.mass = 2048 + Math.round(Math.random() * 8192);
         supressors = new ArrayList<>();
         blockPos = Vec3.createVectorHelper(0,0,0);
@@ -151,7 +151,7 @@ public class TileEntityGravitationalAnomaly extends MOTileEntity implements ISca
             }
 
             manageEntityGravitation(worldObj, 0);
-            manageBlockDestory(worldObj);
+            manageBlockDestroy(worldObj);
         }
     }
     //endregion
@@ -417,7 +417,7 @@ public class TileEntityGravitationalAnomaly extends MOTileEntity implements ISca
     }
     //endregion
 
-    public void manageBlockDestory(World world)
+    public void manageBlockDestroy(World world)
     {
         if (!BLOCK_DESTRUCTION)
             return;
@@ -433,7 +433,7 @@ public class TileEntityGravitationalAnomaly extends MOTileEntity implements ISca
 
         blocks = new PriorityQueue<>(1,new BlockComparitor(xCoord,yCoord,zCoord));
 
-        if (blockDestoryTimer.hasDelayPassed(world,BLOCK_DESTORY_DELAY))
+        if (blockDestroyTimer.hasDelayPassed(world,BLOCK_DESTROY_DELAY))
         {
             for (int x = -range; x < range;x++)
             {
@@ -588,7 +588,7 @@ public class TileEntityGravitationalAnomaly extends MOTileEntity implements ISca
         if (distance <= range && hardness >= 0 && (distance < eventHorizon || hardness < strength))
         {
             int meta = worldObj.getBlockMetadata(x, y, z);
-            if (BLOCK_ENTETIES) {
+            if (BLOCK_ENTITIES) {
 
                 if (FALLING_BLOCKS)
                 {
@@ -866,7 +866,7 @@ public class TileEntityGravitationalAnomaly extends MOTileEntity implements ISca
 
     public double getRealMassUnsuppressed()
     {
-        return Math.log1p(Math.max(mass,0) * STREHGTH_MULTIPLYER);
+        return Math.log1p(Math.max(mass,0) * STRENGTH_MULTIPLIER);
     }
 
     public float getBreakStrength(float distance,float maxRange)
