@@ -60,14 +60,16 @@ public abstract class MOImageGen
         setTexture(texture);
     }
 
-    public void placeBlock(World world,int color,int x,int y,int z,int layer,Random random,int placeNotify)
-    {
-        Block block = getBlockFromColor(color,random);
-        int meta = getMetaFromColor(color,random);
-        if (block != null)
-        {
+    public void placeBlock(World world, int color, int x, int y, int z, int layer, Random random, int placeNotify) {
+        Block block = getBlockFromColor(color, random);
+        Block preBlock = world.getBlock(x, y, z);
+        int meta = getMetaFromColor(color, random);
+        String unname = preBlock.getUnlocalizedName();
+        //warn("%s", unname);
+        if (block != null
+            && preBlock.getBlockHardness(world, x, y, z) != -1.0F) {
             world.setBlock(x, y, z, block, meta, placeNotify);
-            onBlockPlace(world,block,x,y,z,random,color);
+            onBlockPlace(world, block, x, y, z, random, color);
         }
     }
 
