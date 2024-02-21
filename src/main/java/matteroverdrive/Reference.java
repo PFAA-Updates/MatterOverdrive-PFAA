@@ -18,6 +18,10 @@
 
 package matteroverdrive;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import cpw.mods.fml.common.Loader;
 import matteroverdrive.client.data.Color;
 
@@ -25,8 +29,9 @@ public class Reference
 {
 	public static final String MOD_ID = "mo";
 	public static final String MOD_NAME = "MatterOverdrive: Community Edition";
-	public static final String VERSION = "0.4.2";
-	public static final String VERSION_DATE = "20.09.2016";
+	public static final String VERSION = "@VERSION@";
+	private static final DateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
+	public static final String VERSION_DATE = dateFormat.format(new Date());
 	public static final String GUI_FACTORY_CLASS = "matteroverdrive.gui.GuiConfigFactory";
 	public static final String DEPEDNENCIES = "after:ThermalExpansion;after:exnihilo;after:EnderIO;";
 	public static final String CLIENT_PROXY_CLASS = "matteroverdrive.proxy.ClientProxy";
@@ -34,8 +39,8 @@ public class Reference
 	public static final String CHANNEL_NAME = MOD_ID + "_channel";
 	public static final String CHANNEL_WEAPONS_NAME = MOD_ID + "_channel:weapons";
 	public static final String CHANNEL_GUI_NAME = MOD_ID + "_channel:gui";
-	public static final String VERSIONS_CHECK_URL = "https://mo.simeonradivoev.com/wp-json/posts?type[]=mo_download&filter[posts_per_page]=1";
-	public static final String DOWNLOAD_URL = "https://mo.simeonradivoev.com/download_category/downloads/";
+	public static final String VERSIONS_CHECK_URL = "https://raw.githubusercontent.com/simeonradivoev/MatterOverdrive/1.7.10/Versions.txt";
+	public static final String DOWNLOAD_URL = "https://www.curseforge.com/minecraft/mc-mods/matter-overdrive-community-edition/";
 
 
 	//region GUI
