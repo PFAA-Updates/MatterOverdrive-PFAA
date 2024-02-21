@@ -293,7 +293,7 @@ public class TileEntityMachineReplicator extends MOTileEntityMachineMatter imple
         }
         else
         {
-            if (canReplicateIntoSecoundOutput(amount))
+            if (canReplicateIntoSecondOutput(amount))
             {
                 stack.stackSize++;
                 return true;
@@ -339,7 +339,7 @@ public class TileEntityMachineReplicator extends MOTileEntityMachineMatter imple
 		{
 			ItemStack item = getInternalPatternStorage().toItemStack(false);
 			int matter = MatterHelper.getMatterAmountFromItem(item);
-			return this.getMatterStored() >= matter && canReplicateIntoOutput(item) && canReplicateIntoSecoundOutput(matter);
+			return this.getMatterStored() >= matter && canReplicateIntoOutput(item) && canReplicateIntoSecondOutput(matter);
 		}
 		return false;
     }
@@ -405,7 +405,7 @@ public class TileEntityMachineReplicator extends MOTileEntityMachineMatter imple
 		return false;
 	}
 
-    private boolean canReplicateIntoSecoundOutput(int matter)
+    private boolean canReplicateIntoSecondOutput(int matter)
     {
         ItemStack stack = getStackInSlot(SECOND_OUTPUT_SLOT_ID);
 
