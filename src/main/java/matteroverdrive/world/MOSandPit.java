@@ -33,6 +33,7 @@ import java.util.Random;
  */
 public class MOSandPit extends MOWorldGenBuilding
 {
+	private static final int MIN_DISTANCE_APART = 512;
     private int airLeeway;
 
     public MOSandPit(String name,int airLeeway)
@@ -116,7 +117,7 @@ public class MOSandPit extends MOWorldGenBuilding
 
     @Override
     protected boolean shouldGenerate(Random random,World world, int x, int y, int z) {
-        return world.getBiomeGenForCoords(x,y) == BiomeGenBase.desert;
+    	return world.getBiomeGenForCoords(x, y) == BiomeGenBase.desert && isFarEnoughFromOthers(world, x, z, MIN_DISTANCE_APART);
     }
 
     @Override
