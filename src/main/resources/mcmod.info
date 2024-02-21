@@ -1,15 +1,27 @@
 [
 {
   "modid": "mo",
-  "name": "Matter Overdrive",
+  "name": "MatterOverdrive: Community Edition",
   "description": "A mod that dwells within matter and energy.",
-  "version": "0.4.1",
-  "mcversion": "1.7.10",
-  "url": "https://mo.simeonradivoev.com/",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "https://www.curseforge.com/minecraft/mc-mods/matter-overdrive-community-edition",
   "updateUrl": "",
-  "authorList": ["Simeon Radivoev"],
+    "authorList": [
+      "Horizon Studio",
+      "Coded",
+      "Buuz135",
+      "Simeon Radivoev",
+      "Shadowfacts",
+      "Dev_Osmium",
+      "VanMuur",
+      "Gandalf360one",
+      "InfiniteBlock",
+      "Layarion",
+      "TheNumenorean"
+    ],
   "credits": "",
-  "logoFile": "/MatterOverdriveLogo.png",
+  "logoFile": "/mo_logo.png",
   "screenshots": [],
   "requiredMods": [ "Forge", "CoFHLib" ],
   "dependencies": []
