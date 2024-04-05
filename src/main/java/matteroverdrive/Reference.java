@@ -39,7 +39,7 @@ public class Reference
 	public static final String CHANNEL_NAME = MOD_ID + "_channel";
 	public static final String CHANNEL_WEAPONS_NAME = MOD_ID + "_channel:weapons";
 	public static final String CHANNEL_GUI_NAME = MOD_ID + "_channel:gui";
-	public static final String VERSIONS_CHECK_URL = "https://raw.githubusercontent.com/simeonradivoev/MatterOverdrive/1.7.10/Versions.txt";
+	public static final String VERSIONS_CHECK_URL = "https://raw.githubusercontent.com/Matter-Overdrive-Community-Edition/MatterOverdrive-Community-Edition-1.7.10/1.7.10/Versions.txt";
 	public static final String DOWNLOAD_URL = "https://www.curseforge.com/minecraft/mc-mods/matter-overdrive-community-edition/";
 
 
