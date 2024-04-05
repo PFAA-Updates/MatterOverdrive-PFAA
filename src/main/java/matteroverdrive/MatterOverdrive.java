@@ -93,7 +93,7 @@ public class MatterOverdrive
         guiHandler = new GuiHandler();
 		packetPipeline = new PacketPipeline();
 		entityHandler = new EntityHandler();
-        configHandler = new ConfigurationHandler(new File(event.getModConfigurationDirectory().getAbsolutePath() + File.separator + "MatterOverdrive" + File.separator + Reference.MOD_NAME + ".cfg"));
+        configHandler = new ConfigurationHandler(new File(event.getModConfigurationDirectory().getAbsolutePath() + File.separator + "MatterOverdrive" + File.separator + "Matter Overdrive" + ".cfg"));
 		playerEventHandler = new PlayerEventHandler(configHandler);
 		bucketHandler = new BucketHandler();
         matterRegistrationHandler = new MatterRegistrationHandler(event.getModConfigurationDirectory().getAbsolutePath() + File.separator + "MatterOverdrive" + File.separator + "Registry" + ".matter");
