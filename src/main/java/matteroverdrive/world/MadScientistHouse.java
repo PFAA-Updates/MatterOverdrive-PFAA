@@ -158,6 +158,7 @@ public class MadScientistHouse extends StructureVillagePieces.Village {
             if (this.boundingBox.isVecInside(chestXPos, chestYPos, chestZPos)) {
                 world.setBlock(chestXPos, chestYPos, chestZPos, MatterOverdriveBlocks.tritaniumCrate[random.nextInt(MatterOverdriveBlocks.tritaniumCrate.length)], 0, 2);
                 TileEntityTritaniumCrate tileEntityCrate = (TileEntityTritaniumCrate) world.getTileEntity(chestXPos, chestYPos, chestZPos);
+                if (tileEntityCrate != null) {
                 tileEntityCrate.getInventory().addItem(MatterOverdrive.questFactory.generateQuestStack(random, MatterOverdriveQuests.gmo).getContract());
                 ItemStack scanner = new ItemStack(MatterOverdriveItems.dataPad);
                 scanner.setStackDisplayName("Mad Scientist's Data Pad");
@@ -168,6 +169,7 @@ public class MadScientistHouse extends StructureVillagePieces.Village {
                 scanner.getTagCompound().setBoolean("nogui", true);
                 tileEntityCrate.getInventory().addItem(scanner);
                 //return true;
+                }
             }
         }
 
