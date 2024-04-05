@@ -1,1 +1,18 @@
-{"versions":[{"version":"0.4.4","changes":"Minor bugfixes","type":"release","date":"6.4.2024","url":"https://www.curseforge.com/minecraft/mc-mods/matter-overdrive-community-edition/files/5223722"},{"version":"0.4.3","changes":"First Release.","type":"release","date":"31.3.2024","url":"https://www.curseforge.com/minecraft/mc-mods/matter-overdrive-community-edition/files/5223722"}]}
+{
+    "versions":[
+        {
+            "version":"0.4.4",
+            "changes":"Minor bugfixes",
+            "type":"release",
+            "date":"6.4.2024",
+            "url":"https://www.curseforge.com/minecraft/mc-mods/matter-overdrive-community-edition/files/5223722"
+        },
+        {
+            "version":"0.4.3",
+            "changes":"First Release.",
+            "type":"release",
+            "date":"31.3.2024",
+            "url":"https://www.curseforge.com/minecraft/mc-mods/matter-overdrive-community-edition/files/5223722"
+        }
+    ]
+}
