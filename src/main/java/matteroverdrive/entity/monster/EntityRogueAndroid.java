@@ -114,7 +114,7 @@ public class EntityRogueAndroid implements IConfigSubscriber
         String[] whitelist = configurationHandler.config.getStringList("biome.whitelist",ConfigurationHandler.CATEGORY_ENTITIES + "." + "rogue_android",new String[0],"Rogue Android biome whitelist");
         for (int i = 0;i < whitelist.length;i++)
         {
-            biomesBlacklist.add(whitelist[i].toLowerCase());
+            biomesWhitelist.add(whitelist[i].toLowerCase());
         }
     }
 
