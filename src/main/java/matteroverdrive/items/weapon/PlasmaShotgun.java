@@ -80,7 +80,7 @@ public class PlasmaShotgun extends EnergyWeapon
 
     @Override
     public float getWeaponBaseDamage(ItemStack weapon) {
-        return 16;
+        return 1200F;
     }
 
     @Override

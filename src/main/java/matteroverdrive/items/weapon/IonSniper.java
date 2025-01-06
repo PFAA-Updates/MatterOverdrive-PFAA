@@ -80,7 +80,7 @@ public class IonSniper extends EnergyWeapon
 
     @Override
     public float getWeaponBaseDamage(ItemStack weapon) {
-        return 21;
+        return 2000;
     }
 
     @Override

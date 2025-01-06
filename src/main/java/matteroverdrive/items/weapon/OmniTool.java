@@ -266,7 +266,7 @@ public class OmniTool extends EnergyWeapon
 
     @Override
     public float getWeaponBaseDamage(ItemStack weapon) {
-        return 7;
+        return 150;
     }
 
     @Override
