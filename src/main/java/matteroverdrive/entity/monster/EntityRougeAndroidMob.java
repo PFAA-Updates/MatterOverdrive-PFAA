@@ -88,7 +88,7 @@ public class EntityRougeAndroidMob extends EntityMob implements IEntityAdditiona
         name += String.format("[%s] ",getAndroidLevel());
         name += names[rand.nextInt(names.length)];
         setCustomNameTag(name);
-        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(getIsLegendary() ? 128 : getAndroidLevel() * 10 + 32);
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(getIsLegendary() ? 1024.0 : getAndroidLevel() * 128 + 512);
         this.setHealth(this.getMaxHealth());
 
         if (fromSpawner)
