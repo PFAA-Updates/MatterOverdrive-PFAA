@@ -296,7 +296,7 @@ public class Phaser extends EnergyWeapon implements IWeapon{
         {
             damage = (float)Math.pow(KILL_DAMAGE_MULTIPLY,level - (KILL_MODE_LEVEL-1));
         }
-        return damage;
+        return damage * 50F;
 	}
 
     @Override
